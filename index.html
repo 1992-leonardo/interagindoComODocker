@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>SUPER TRUNFO - Imersão Dev - Aula 08</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+  <div class="container">
+
+    <!-- POPUP REGRAS DO JOGO -->
+    <div class="popup-fundo" id="popup-regras">
+      <div class="popup">
+        <button onclick="hidePopup('popup-regras')" id="btnFechar">X</button>
+        <div class="popup-int">
+          <h3>COMO JOGAR:</h3>
+          <ul>
+            <li>Clique em "<b>Sortear carta</b>".</li>
+            <li>Escolha um dos atributos (característica) do personagem da sua carta.</li>
+            <li>Clique em "<b>Jogar</b>".
+              <ul>
+                <li>Se o seu atributo for maior que o do oponente: ponto para você!</li>
+                <li>Se o do oponente for maior: ponto para ele!</li>
+                <li>Caso empate: você deve escolher um outro atributo até que tenha um vencedor</li>
+              </ul>
+            </li>
+            <li>Clique em "<b>Sortear outra carta</b>" embaixo das cartas, ou em "<b>Sortear carta</b>" no cabeçalho, para iniciar uma nova rodada.</li>
+            <li>Clique em "<b>Zerar Jogo</b>" caso queira reiniciar o jogo do início e zerar o placar.</li>
+          </ul>
+          <h3>DIVIRTA-SE!</h3>
+          <p style="text-align:center"><a onclick="hidePopup('popup-regras')">FECHAR(X)</a></p>
+        </div>
+      </div>
+    </div> <!-- fecha <div class="popup-fundo" id="popup-regras"> -->
+
+    <img src="https://www.alura.com.br/assets/img/imersoes/dev-2021/logo-imersao-super-trunfo.png" class="page-logo" alt="">
+    <h1 class="page-title">SUPER TRUNFO - TURMA DA MÔNICA</h1>
+
+    <div class="col_out">
+      <div class="row">
+
+        <div class="coluna">
+          <table align="center">
+            <tr>
+              <th colspan="3">
+                <h2>&nbsp&nbspPLACAR&nbsp&nbsp</h2>
+              </th>
+            </tr>
+            <tbody>
+              <tr>
+                <td colspan="3">
+
+                </td>
+              </tr>
+              <tr>
+                <td>VOCÊ</td>
+                <td></td>
+                <td>PC</td>
+              </tr>
+              <tr>
+                <td>
+                  <div id="placar0"></div>
+                </td>
+                <td>x</td>
+                <td>
+                  <div id="placar1"></div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="coluna">
+          <div class="btnMenu">
+            <button onclick="sortearCarta()" id="btnSortear">Sortear carta</button><br>
+            <button onclick="zerarJogo()" id="btnZerar">Zerar Jogo</button><br>
+            <button onclick="showPopup('popup-regras')" id="btnRegras">Como jogar</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="col_meio">
+      <form id="form">
+        <h2>&nbspEscolha o seu atributo&nbsp</h2>
+        <div class="wrapper">
+          <div>
+            <div id="carta-jogador">
+              <!-- <imagem do verso da carta aqui> -->
+              <h3></h3>
+            </div>
+          </div>
+          <div>
+            <div id="carta-maquina" class="carta">
+              <!--<imagem do verso da carta aqui> -->
+            </div>
+          </div>
+        </div>
+        <div id="botao-jogar"></div>
+        <div id="resultado"></div>
+      </form>
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
